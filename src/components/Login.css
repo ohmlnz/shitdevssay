@@ -1,0 +1,40 @@
+.login {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.options-container {
+  margin: 1em;
+}
+
+.option {
+  margin: 0 1em;
+}
+
+.option:hover {
+  cursor: pointer;
+}
+
+.option.selected {
+  border-bottom: 2px solid #0e0e0eb0;
+}
+
+.login-form {
+  width: 300px;
+  margin: auto;
+}
+
+.login-form input {
+  width: 80%;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.login-form button {
+  border: none;
+  padding: 7px 25px;
+  font-size: 15px;
+  color: #545252;
+  margin-top: 10px;
+}
