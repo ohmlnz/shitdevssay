@@ -1,0 +1,28 @@
+.main-title {
+  text-align: center;
+  position: sticky;
+  top: 0px;
+  padding: 8px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #d1d5da;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.main-upload-button {
+  position: absolute;
+  right: 2em;
+  top: 25%;
+  padding: 7px 25px;
+  background-color: transparent;
+  border: 1px solid #494444;
+  border-radius: 4px;
+  box-shadow: inset -2px -2px 0px #494444;
+  font-weight: 600;
+  outline: 0;
+}
+
+.main-upload-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}

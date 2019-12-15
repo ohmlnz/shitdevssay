@@ -1,0 +1,146 @@
+.post-submission {
+  width: 700px;
+  margin: auto;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 25%;
+  left: 32.5%;
+}
+
+.post-submission .post-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: 0;
+}
+
+.post-submission .post-close svg circle,
+.post-submission .post-close svg line {
+  stroke: #8a8a8a;
+}
+
+.post-submission .post-close:hover svg circle,
+.post-submission .post-close:hover svg line {
+  stroke: black;
+}
+
+.post-title {
+  font-style: italic;
+  cursor: text;
+  outline: 0;
+  margin-top: 0;
+}
+
+.post-title:empty:before {
+  color: #8a8a8a;
+  content: attr(placeholder);
+}
+
+.image-preview-container {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.image-preview-container .file-change {
+  margin: 1em;
+  font-style: italic;
+  font-weight: 400;
+  color: #000000d9;
+}
+
+.image-preview-container .file-change:hover {
+  cursor: pointer;
+}
+
+.content-selection-container {
+  width: 50%;
+  margin-top: 2em;
+}
+
+.content-selection-container .image-upload {
+  text-align: center;
+}
+
+.content-selection-container .image-upload label {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+  color: #8a8a8a;
+  font-weight: 500;
+  justify-content: center;
+  font-size: 13.35px;
+}
+
+.content-selection-container .image-upload label:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.content-selection-container .image-upload label svg {
+  margin: 0 5px;
+}
+
+.content-selection-container .image-upload label:hover svg rect,
+.content-selection-container .image-upload label:hover svg circle,
+.content-selection-container .image-upload label:hover svg polyline {
+  stroke: black;
+}
+
+.content-selection-container .image-upload .file-selection {
+  display: none;
+}
+
+.content-selection-container .image-upload .selection-choice {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: 0.5em 0;
+  opacity: 0.8;
+}
+
+.content-selection-container .image-upload .url-selection {
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  border-bottom: 2px solid #4a464624;
+  outline: 0;
+  width: 75%;
+}
+
+.post-submission .post-button-submit {
+  border: 1px solid #0000003b;
+  padding: 0.5em;
+  width: 35%;
+  margin-top: 2em;
+  font-family: sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.post-submission .post-button-submit:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.post-submission .post-button-submit:disabled:hover {
+  background-color: #f0f0f0;
+  color: #6d6d6d;
+  cursor: not-allowed;
+}
+
+.file-upload-error {
+  margin: 10px;
+  color: #f84d4d;
+  font-weight: 500;
+}

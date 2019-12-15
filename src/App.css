@@ -1,8 +1,13 @@
-.main-title {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.post-container {
+.posts-container {
+  padding: 1em 0;
+}
+
+.single-post-container {
   width: 50%;
   margin: auto;
 }
@@ -14,18 +19,14 @@
   margin-bottom: 3em;
 }
 
-.post-container {
-  margin: auto;
-}
-
 .post-inner h1 {
   font-family: sans-serif;
   font-style: italic;
+  margin-bottom: 1em;
 }
 
 .post-inner figure {
   box-shadow: #ccc4c4 0px 5px 19px 6px;
-  padding: 2em 0;
   width: 700px;
   height: 450px;
   background-repeat: no-repeat;
@@ -44,35 +45,11 @@
   width: 100%;
 }
 
-.image-submission {
-  width: 500px;
-  margin: auto;
-  text-align: center;
-  padding: 2em 0;
-}
-
-.image-submission input {
-  border: none;
-  padding: 10px;
-  font-size: 15px;
-  width: 50%;
-  text-align: center;
-  margin-bottom: 1em;
-  border-bottom: 2px solid #4a464624;
-}
-
-.image-submission .image-submit {
-  border: 1px solid #0000003b;
-  padding: 0.5em;
-  width: 35%;
-  margin: auto;
-  font-size: 1em;
-  font-family: sans-serif;
-  font-size: 15px;
-}
-
-.image-submission .image-submit:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
+.modal-background {
+  background-color: #000000e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

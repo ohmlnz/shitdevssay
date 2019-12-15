@@ -22,5 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# firebase
-/src/firebase/config.js
+# configs
+/src/config/firebase.js
+/src/config/imgur.js
