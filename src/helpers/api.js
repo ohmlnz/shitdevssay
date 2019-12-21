@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import { firebaseConfig } from '../firebase/config.js';
+import { firebaseConfig } from '../config/firebase.js';
 
 export function initializeFirebase() {
   firebase.initializeApp(firebaseConfig);
@@ -14,15 +14,14 @@ export async function fetchDatabaseData() {
   return posts.val();
 }
 
-export function writeToDatabase(url) {
+export function writeToDatabase(url, title) {
   firebase
     .database()
     .ref('/posts/')
     .push()
     .update({
-      author: 'Test',
       image: url,
-      title: 'Title test.'
+      title
     });
 }
 

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { initializeFirebase, fetchDatabaseData, writeToDatabase } from './helpers/firebase.js';
+import { initializeFirebase, fetchDatabaseData } from './helpers/api.js';
+import Header from './components/Header';
 import './App.css';
+
+import Upload from './components/Upload';
 
 const App = () => {
   const [database, setDatabase] = useState([]);
-  const [url, setUrl] = useState('');
+  // TODO: use state management library to handle these
+  const [modalState, setModalState] = useState(false);
   const { firebase } = window;
 
   useEffect(() => {
@@ -17,41 +21,31 @@ const App = () => {
     init();
   }, [firebase]);
 
-  const submitPost = () => {
-    writeToDatabase(url);
-    setUrl('');
-  };
-
   return (
-    <div>
+    <div className="app-container">
       <Helmet>
         <title>Shit Devs Say</title>
       </Helmet>
-      <h1 className="main-title">💩 🤓 💬</h1>
-      {database.length ? (
-        Object.entries(database[0]).map(([key, { title, image }]) => (
-          <div className="post-container" key={key}>
-            <div className="post-inner">
-              <h1>{title}</h1>
-              <figure style={{ backgroundImage: `url(${image})` }}></figure>
+      <Header setModalState={setModalState} />
+      <div className="posts-container">
+        {database.length ? (
+          Object.entries(database[0]).map(([key, { title, image }]) => (
+            <div className="single-post-container" key={key}>
+              <div className="post-inner">
+                <h1>{title}</h1>
+                <figure style={{ backgroundImage: `url(${image})` }}></figure>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <div />
-      )}
-      <div className="image-submission">
-        <hr />
-        <input
-          type="text"
-          value={url}
-          onChange={e => setUrl(e.target.value)}
-          placeholder="Enter the url of your image here"
-        />
-        <div className="image-submit" onClick={submitPost}>
-          Submit
-        </div>
+          ))
+        ) : (
+          <div />
+        )}
       </div>
+      {modalState && (
+        <div className="modal-background">
+          <Upload setModalState={setModalState} />
+        </div>
+      )}
     </div>
   );
 };
